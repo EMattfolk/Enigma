@@ -30,32 +30,16 @@ namespace Enigma
             int length = inputTextBox.Text.Length;
             outputTextBox.Text = enigmaMachine.Translate(inputTextBox.Text);
 
-            rotorPos1.Enabled = false;
-            rotorPos2.Enabled = false;
-            rotorPos3.Enabled = false;
-            rotorPos1.Value = enigmaMachine.RotorPosition1();
-            rotorPos2.Value = enigmaMachine.RotorPosition2();
-            rotorPos3.Value = enigmaMachine.RotorPosition3();
+            bool controlsEnabled = length == 0;
 
-            if (length == 0)
-            {
-                rotorPos1.Enabled = true;
-                rotorPos2.Enabled = true;
-                rotorPos3.Enabled = true;
-                rotorBar1.Enabled = true;
-                rotorBar2.Enabled = true;
-                rotorBar3.Enabled = true;
-                connectButton.Enabled = true;
-                removeButton.Enabled = true;
-            }
-            else
-            {
-                rotorBar1.Enabled = false;
-                rotorBar2.Enabled = false;
-                rotorBar3.Enabled = false;
-                connectButton.Enabled = false;
-                removeButton.Enabled = false;
-            } 
+            rotorPos1.Enabled = controlsEnabled;
+            rotorPos2.Enabled = controlsEnabled;
+            rotorPos3.Enabled = controlsEnabled;
+            rotorBar1.Enabled = controlsEnabled;
+            rotorBar2.Enabled = controlsEnabled;
+            rotorBar3.Enabled = controlsEnabled;
+            connectButton.Enabled = controlsEnabled;
+            removeButton.Enabled = controlsEnabled;
         }
 
         private void rotorBar1_Scroll(object sender, EventArgs e)
@@ -75,17 +59,17 @@ namespace Enigma
 
         private void rotorPos1_ValueChanged(object sender, EventArgs e)
         {
-            if (rotorPos1.Enabled) enigmaMachine.SetRotorPosition((int)rotorPos3.Value, (int)rotorPos2.Value, (int)rotorPos1.Value);
+            enigmaMachine.SetRotorPosition((int)rotorPos3.Value, (int)rotorPos2.Value, (int)rotorPos1.Value);
         }
 
         private void rotorPos2_ValueChanged(object sender, EventArgs e)
         {
-            if (rotorPos2.Enabled) enigmaMachine.SetRotorPosition((int)rotorPos3.Value, (int)rotorPos2.Value, (int)rotorPos1.Value);
+            enigmaMachine.SetRotorPosition((int)rotorPos3.Value, (int)rotorPos2.Value, (int)rotorPos1.Value);
         }
 
         private void rotorPos3_ValueChanged(object sender, EventArgs e)
         {
-            if (rotorPos3.Enabled) enigmaMachine.SetRotorPosition((int)rotorPos3.Value, (int)rotorPos2.Value, (int)rotorPos1.Value);
+            enigmaMachine.SetRotorPosition((int)rotorPos3.Value, (int)rotorPos2.Value, (int)rotorPos1.Value);
         }
 
         private void connectButton_Click(object sender, EventArgs e)

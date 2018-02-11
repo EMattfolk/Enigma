@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.inputTextBox = new System.Windows.Forms.RichTextBox();
             this.outputTextBox = new System.Windows.Forms.RichTextBox();
             this.rotorPos1 = new System.Windows.Forms.NumericUpDown();
@@ -64,7 +65,7 @@
             this.inputTextBox.Location = new System.Drawing.Point(325, 24);
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.Size = new System.Drawing.Size(220, 110);
-            this.inputTextBox.TabIndex = 0;
+            this.inputTextBox.TabIndex = 11;
             this.inputTextBox.Text = "";
             this.inputTextBox.TextChanged += new System.EventHandler(this.inputTextBox_TextChanged);
             // 
@@ -74,7 +75,7 @@
             this.outputTextBox.Name = "outputTextBox";
             this.outputTextBox.ReadOnly = true;
             this.outputTextBox.Size = new System.Drawing.Size(220, 110);
-            this.outputTextBox.TabIndex = 1;
+            this.outputTextBox.TabIndex = 12;
             this.outputTextBox.Text = "";
             // 
             // rotorPos1
@@ -100,7 +101,7 @@
             0});
             this.rotorPos2.Name = "rotorPos2";
             this.rotorPos2.Size = new System.Drawing.Size(40, 20);
-            this.rotorPos2.TabIndex = 3;
+            this.rotorPos2.TabIndex = 1;
             this.rotorPos2.ValueChanged += new System.EventHandler(this.rotorPos2_ValueChanged);
             // 
             // rotorPos3
@@ -113,7 +114,7 @@
             0});
             this.rotorPos3.Name = "rotorPos3";
             this.rotorPos3.Size = new System.Drawing.Size(40, 20);
-            this.rotorPos3.TabIndex = 4;
+            this.rotorPos3.TabIndex = 0;
             this.rotorPos3.ValueChanged += new System.EventHandler(this.rotorPos3_ValueChanged);
             // 
             // rotorPosLabel
@@ -121,9 +122,9 @@
             this.rotorPosLabel.AutoSize = true;
             this.rotorPosLabel.Location = new System.Drawing.Point(21, 8);
             this.rotorPosLabel.Name = "rotorPosLabel";
-            this.rotorPosLabel.Size = new System.Drawing.Size(73, 13);
+            this.rotorPosLabel.Size = new System.Drawing.Size(100, 13);
             this.rotorPosLabel.TabIndex = 5;
-            this.rotorPosLabel.Text = "Rotor Position";
+            this.rotorPosLabel.Text = "Initial Rotor Position";
             // 
             // rotor1Label
             // 
@@ -141,7 +142,7 @@
             this.rotorBar1.Maximum = 4;
             this.rotorBar1.Name = "rotorBar1";
             this.rotorBar1.Size = new System.Drawing.Size(158, 45);
-            this.rotorBar1.TabIndex = 7;
+            this.rotorBar1.TabIndex = 3;
             this.rotorBar1.Scroll += new System.EventHandler(this.rotorBar1_Scroll);
             // 
             // label2
@@ -169,7 +170,7 @@
             this.rotorBar2.Maximum = 4;
             this.rotorBar2.Name = "rotorBar2";
             this.rotorBar2.Size = new System.Drawing.Size(158, 45);
-            this.rotorBar2.TabIndex = 9;
+            this.rotorBar2.TabIndex = 4;
             this.rotorBar2.Value = 1;
             this.rotorBar2.Scroll += new System.EventHandler(this.rotorBar2_Scroll);
             // 
@@ -189,7 +190,7 @@
             this.rotorBar3.Maximum = 4;
             this.rotorBar3.Name = "rotorBar3";
             this.rotorBar3.Size = new System.Drawing.Size(158, 45);
-            this.rotorBar3.TabIndex = 11;
+            this.rotorBar3.TabIndex = 5;
             this.rotorBar3.Value = 2;
             this.rotorBar3.Scroll += new System.EventHandler(this.rotorBar3_Scroll);
             // 
@@ -254,7 +255,7 @@
             this.leftPlugcomboBox.MaxLength = 1;
             this.leftPlugcomboBox.Name = "leftPlugcomboBox";
             this.leftPlugcomboBox.Size = new System.Drawing.Size(40, 21);
-            this.leftPlugcomboBox.TabIndex = 16;
+            this.leftPlugcomboBox.TabIndex = 6;
             // 
             // rightPlugComboBox
             // 
@@ -290,7 +291,7 @@
             this.rightPlugComboBox.MaxLength = 1;
             this.rightPlugComboBox.Name = "rightPlugComboBox";
             this.rightPlugComboBox.Size = new System.Drawing.Size(40, 21);
-            this.rightPlugComboBox.TabIndex = 17;
+            this.rightPlugComboBox.TabIndex = 7;
             // 
             // connectionListBox
             // 
@@ -298,14 +299,14 @@
             this.connectionListBox.Location = new System.Drawing.Point(184, 83);
             this.connectionListBox.Name = "connectionListBox";
             this.connectionListBox.Size = new System.Drawing.Size(120, 173);
-            this.connectionListBox.TabIndex = 18;
+            this.connectionListBox.TabIndex = 9;
             // 
             // connectButton
             // 
             this.connectButton.Location = new System.Drawing.Point(205, 54);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(75, 23);
-            this.connectButton.TabIndex = 19;
+            this.connectButton.TabIndex = 8;
             this.connectButton.Text = "Connect";
             this.connectButton.UseVisualStyleBackColor = true;
             this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
@@ -315,7 +316,7 @@
             this.removeButton.Location = new System.Drawing.Point(205, 262);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
-            this.removeButton.TabIndex = 20;
+            this.removeButton.TabIndex = 10;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
@@ -366,6 +367,9 @@
             this.Controls.Add(this.rotorPos1);
             this.Controls.Add(this.outputTextBox);
             this.Controls.Add(this.inputTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(577, 336);
+            this.MinimumSize = new System.Drawing.Size(577, 336);
             this.Name = "Form1";
             this.Text = "Enigma Machine";
             this.Load += new System.EventHandler(this.Form1_Load);
